@@ -28,7 +28,8 @@ elif editedtext and action == 'b':
         print(output)
 elif editedtext and action == 'c':
     for word in editedtext:
-        Counter = Counter(editedtext)
-        most_occur = Counter.most_common(5)
+        Count = Counter(editedtext)
+        most_occur = Count.most_common(5)
         print(most_occur)
+        break
 
