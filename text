@@ -1,0 +1,36 @@
+from collections import Counter
+
+text = input('enter text: ')
+action = input('chose action(a/b/c): ')
+
+editedtext = []
+output = ""
+split_text = text.split()
+for i in split_text:
+    i = i.rstrip(',')
+    i = i.rstrip('.')
+    i = i.lower()
+    if len(i) > 3:
+        editedtext.append(i)
+if editedtext and action == 'a':
+    editedtext.sort()
+    for i in editedtext:
+        output += i + '\n'
+    print(output)
+
+
+    print(result)
+elif editedtext and action == 'b':
+    editedtext.sort(key=len)
+    editedtext = editedtext[-1:-6:-1]
+
+    for i in editedtext:
+        output += i + '\n'
+
+        print(output)
+elif editedtext and action == 'c':
+    for word in editedtext:
+        Count = Counter(editedtext)
+        most_occur = Count.most_common(5)
+        print(most_occur)
+        break
