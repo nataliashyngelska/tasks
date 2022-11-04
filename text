@@ -9,17 +9,17 @@ split_text = text.split()
 for i in split_text:
     i = i.rstrip(',')
     i = i.rstrip('.')
+    i = i.rstrip(':')
     i = i.lower()
     if len(i) > 3:
         editedtext.append(i)
 if editedtext and action == 'a':
     editedtext.sort()
     for i in editedtext:
-        output += i + '\n'
-    print(output)
-
-
+        output = list(dict.fromkeys(editedtext))
+        result = '\n'.join(output)
     print(result)
+
 elif editedtext and action == 'b':
     editedtext.sort(key=len)
     editedtext = editedtext[-1:-6:-1]
@@ -34,3 +34,4 @@ elif editedtext and action == 'c':
         most_occur = Count.most_common(5)
         print(most_occur)
         break
+
